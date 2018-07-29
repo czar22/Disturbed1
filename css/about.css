@@ -1,0 +1,200 @@
+* {
+  margin:0;
+  padding:0;
+}
+
+html, body {
+  width:100%;
+  height:100%;
+  background: black;
+}
+
+body {
+  font-family:sans-serif;
+  min-height: 100%;
+  z-index: 1;
+  font-family: 'Cinzel', serif;
+}
+
+#element::-webkit-scrollbar {
+    display: none;
+}
+::-webkit-scrollbar {
+    display: none;
+}
+
+ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: black;
+      top: 0;
+      width: 100%;
+
+}
+
+li {
+      display: inline;
+      float: left;
+}
+a {
+      display: block;
+      padding: 8px;
+      background-color: black;
+      font-family: 'Cinzel', serif;
+      font-weight: bold;
+      font-size: 1.7em;
+}
+li a {
+    display: block;
+    color: #B22222;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+li a:hover {
+    color:  #B22222;
+}
+.background-image{
+  background-image: url("../images/fists.jpg");
+  width:100%;
+   height:93.5%;
+
+   margin 0;
+  filter: blur(2px);
+  -webkit-filter: blur(2px);
+  display: block;
+
+
+  position: relative;
+
+  min-height: 92%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  z-index: 0;
+  background-attachment: fixed;
+
+}
+
+
+h1{
+  position: fixed;
+  background-color: black;
+  opacity: 0.9;
+  border-radius:0.2em 0.2em 0.2em 0.2em;
+  padding: 0.5em;
+  animation: 1s ease-out 0s 1 slideup;
+  top: 4.2em;
+  left: 32%;
+  right: 32%;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+h1 img{
+  width: 100%;
+  -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+h2{
+  position: fixed;
+  bottom: 20%;
+  left: 25%;
+  right: 25%;
+  background-color: black;
+  color: #B22222;
+  opacity: 0.9;
+  border-radius:0.2em 0.2em 0.2em 0.2em;
+  padding: 0.5em;
+  animation: 1s ease-out 0s 1 slidedown;
+  text-align: center;
+  font-size: 1.7em;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+
+}
+.menu {
+    height: 0%;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0, 0.9);
+    overflow-y: hidden;
+    transition: 0.5s;
+    opacity: 1;
+
+}
+.menubutton{
+    display: none;
+}
+
+.phonemenu {
+    position: relative;
+    top: 15%;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+    opacity: 1;
+}
+
+.menu a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #C5B9B2;
+    display: block;
+    transition: 0.5s;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0, 0.9);
+}
+
+.menu a:hover, .menu a:focus {
+    color: #69A5AB;
+}
+
+.menu .closephonemenu {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+}
+.fade-in {
+  -webkit-animation-name: animatebottom;
+  -webkit-animation-duration: 1s;
+  animation-name: animatebottom;
+  animation-duration: 1s
+}
+
+@-webkit-keyframes animatebottom {
+  from {opacity:0 }
+  to { opacity:1 }
+}
+
+@keyframes animatebottom {
+  from{opacity:0 }
+  to{opacity:1 }
+}
+
+@media (max-width: 630px) {
+  ul.Top     { display: none; }
+  .menubutton { display: inline-block; }
+  h1{top: 3em;}
+  h2 {top: 16em; left: 10%; right: 10%; bottom: 7em;height:38%;}
+  .background-image{height:95.7%;}
+  .aboutimage{width:50%; left:4.5em;}
+}

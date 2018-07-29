@@ -1,0 +1,313 @@
+<!Doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css?family=Cinzel" rel="stylesheet">
+<link rel="stylesheet" href="css/cart.css">
+<script src="js/Java.js"></script>
+<title> Disturbed </title>
+<link rel="icon" href="images/icon.jpg">
+</head>
+<body onload="pageload()">
+  <ul class="Top">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="merch.html">Merch</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="report.html">Report</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="cart.html">Cart</a></li>
+  </ul>
+  <header id="phonebar" class="menu">
+    <a href="javascript:void(0)" class="closephonemenu" onclick="closephonebar();scrolldownon()">&times;</a>
+    <div class="phonemenu">
+      <a href="index.html">Home</a>
+      <a href="merch.html">Merch</a>
+      <a href="about.html">About</a>
+      <a href="report.html">Report</a>
+      <a href="contact.html">Contact</a>
+      <a href="cart.html">Cart</a>
+    </div>
+  </header>
+  <span class="menubutton" style="font-size:30px;cursor:pointer;margin-left:48%" onclick="openphonebar()">&#9776;</span>
+  <div style="display:block;" id="pageload"></div>
+
+<div id="everything" class="background-image fade-in"></div>
+  <div id="everything1" class="cartbox">
+    <div class="cartinfo">
+      <br>
+      <h1>Checkout</h1>
+      <h1 id=noitems> There are no items in your cart </h1>
+      <div id="tshirtinfo" class="infocart" style="display:none; text-align:left;margin-left:5%;margin-right:5%;margin-top:2em; margin-bottom:2em;">
+      <img id="tshirtwhite" src="images/tshirt.jpg" alt="cart_photo">
+      <h1 class="carttextinfo" style="display:inline-block; vertical-align:bottom;text-align:left;margin-bottom:0.65em;width:15em; color: #B22222;">TShirt</h1>
+      <h1 style="display:inline-block; vertical-align:bottom;margin-bottom:0.65em; color: #B22222;">Quantity</h1>
+      <select id="tshirtq" style="border:2px; border-style:solid; border-color: #B22222; margin:2px; margin-bottom: 1.8em; padding:0.5em;background:#B22222;font-weight:bold;">
+        <option value="o" selected disabled>0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+      </select>
+      <h1 style="display:inline-block; vertical-align:bottom;text-align:left;margin-bottom:0.65em; margin-left:1em; color: #B22222 !important;">Sizes</h1>
+      <select id="tshirts" style="border:2px; border-style:solid; border-color: #B22222; margin:2px; padding:0.5em;background:#B22222;font-weight:bold;">
+        <option value="o" selected disabled >Size</option>
+        <option value="s">S</option>
+        <option value="m">M</option>
+        <option value="l">L</option>
+      </select>
+      <button onclick="removetshirt();" style="color: #B22222;" style="cursor:pointer;">&times;</button>
+    </div>
+    <div id="cdinfo" class="infocart" style="display:none;text-align:left;margin-left:5%;margin-right:5%;margin-top:2em; margin-bottom:2em;">
+      <img src="images/hat.jpg" alt="cart_photo">
+      <h1 class="carttextinfo" style="display:inline-block; vertical-align:bottom;text-align:left;margin-bottom:0.65em;width:15em; color: #B22222;">Hat</h1>
+      <h1 style="display:inline-block; vertical-align:bottom;margin-bottom:0.65em; color: #B22222;">Quantity</h1>
+      <select id="cdq" style="border:2px; border-style:solid; border-color: #B22222; margin:2px; margin-bottom: 1.8em;padding:0.5em;background:#B22222;font-weight:bold;">
+        <option value="o" selected disabled>0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+      </select>
+      <button onclick="removecd();" class="albumbutton" style="margin-left:5.95em;cursor:pointer;color: #B22222;">&times;</button>
+    </div>
+    <div id="tshirtcdinfo" class="infocart" style="display:none;text-align:left;margin-left:5%;margin-right:5%;margin-top:2em; margin-bottom:2em;">
+      <img id="tshirtcdwhite" src="images/hoodie.jpg" alt="cart_photo">
+      <h1 class="carttextinfo" style="display:inline-block; vertical-align:bottom;text-align:left;margin-bottom:0.65em;width:15em;color: #B22222;">Hoodie</h1>
+      <h1 style="display:inline-block; vertical-align:bottom;margin-bottom:0.65em; color: #B22222;">Quantity</h1>
+      <select id="tshirtcdq" style="border:2px; border-style:solid; border-color: #B22222; margin:2px;margin-bottom: 1.8em; padding:0.5em;background: #B22222;font-weight:bold;">
+        <option value="o" selected disabled>0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+      </select>
+      <h1 style="display:inline-block; vertical-align:bottom;text-align:left;margin-bottom:0.65em;margin-left:1em; color: #B22222 !important;">Sizes</h1>
+      <select id="tshirtcds" style="border:2px; border-style:solid; border-color: #B22222; margin:2px; padding:0.5em;background:#B22222;font-weight:bold;">
+        <option value="o" selected disabled >Size</option>
+        <option value="s">S</option>
+        <option value="m">M</option>
+        <option value="l">L</option>
+      </select>
+      <button onclick="removetshirtcd();" style="color: #B22222;" style="cursor:pointer;">&times;</button>
+  </div>
+  <section class="cartbottom">
+    <button onclick="save();" style="width:auto; margin-bottom: 0 !important;margin-right:0.5em;color: #B22222;"> Update Cart </button>
+    <button onclick="checkout();" style="width:auto; margin-bottom: 0 !important;margin-right:1em;color: #B22222;"> Checkout </button>
+    <h1 style="text-align:right !important" class="price" style="color: #B22222 !important;">Total: £</h1>
+    <h1 style="text-align:right !important" class="price" id="price" style="color: #B22222 !important;"></h1>
+    <h1 style="text-align:right !important" class="price" style="color: #B22222 !important;">.00</h1>
+  </section>
+  </div>
+  </div>
+
+
+  <div id="checkout" class="checkoutbg">
+
+  <a href="javascript:void(0)" class="closecheckout" onclick="closecheckout();">&times;</a>
+  <section class="checkoutform">
+    <form action="mailto:czar.jacobs@gmail.com" enctype="text/plain" method="post">
+      <div class="namefield">
+        <label>First Name</label>
+        <input type="text" id="fname" name="First name" placeholder="First name" required>
+  	  </div>
+      <div class="namefield">
+        <label>Last Name</label>
+        <input type="text" id="lname" name="Last name" placeholder="Last name" required>
+      </div>
+      <label style="display:block;" for="title">Full Address</label>
+      <input type="text" id="address" name="Address" placeholder="Address" required>
+      <div class="namefield">
+        <label>Phone Number</label>
+        <input type="text" id="phonenumber" name="Phone Number" placeholder="Phone Number" required>
+  	  </div>
+      <div class="namefield">
+        <label for="email" style="display:block;">Email</label>
+        <input type="text" id="email" name="Email" placeholder="Email" required>
+      </div>
+       <label for="email" style="display:block;">Card Details</label>
+       <input type="text" id="carddetails" name="Card Details" placeholder="Card Details" required>
+       <div class="itemthirds">
+          <label style="display:block;">TShirt</label>
+          <div class="itemhalves">
+            <input id="chtshirtq" type="text" name="tshirtq" value="" placeholder="Quantity" readonly>
+            <input id="chtshirts" type="text" name="tshirts" value="" placeholder="Size" readonly>
+          </div>
+       </div>
+       <div class="itemthirds">
+         <label style="display:block;">Hat</label>
+         <input style="width:49%;"id="chcdq" type="text" name="cdq" placeholder="Quantity" value="" readonly>
+       </div>
+       <div class="itemthirds">
+         <label style="display:block;">Hoodie</label>
+         <div class="itemhalves">
+          <input id="chtshirtcdq" type="text" name="tshirtcdq" placeholder="Quatity" value="" readonly>
+          <input id="chtshirtcds" type="text" name="tshirtcds" placeholder="Size" value="" readonly>
+        </div>
+       </div>
+
+
+
+       <input id="submitcart" type="submit" value="Submit">
+    </form>
+  </section>
+</div>
+
+
+
+
+  <script>
+  function closecheckout () {
+    document.getElementById("checkout").style.display = "none";
+  }
+  function checkout () {
+    document.getElementById("checkout").style.display = "block";
+  }
+  function removetshirt (){
+    localStorage.removeItem('tshirts');
+    localStorage.removeItem('tshirtq');
+    location.reload();
+  }
+  function removecd (){
+    localStorage.removeItem('cdq');
+    location.reload();
+  }
+  function removetshirtcd (){
+    localStorage.removeItem('tshirtcds');
+    localStorage.removeItem('tshirtcdq');
+    location.reload();
+  }
+
+
+  function save(){
+    var tshirts = document.getElementById("tshirts");
+    localStorage.setItem('tshirts' , tshirts.value);
+    var tshirtq = document.getElementById("tshirtq");
+    localStorage.setItem('tshirtq' , tshirtq.value);
+    var cdq = document.getElementById("cdq");
+    localStorage.setItem('cdq' , cdq.value);
+    var tshirtcds = document.getElementById("tshirtcds");
+    localStorage.setItem('tshirtcds' , tshirtcds.value);
+    var tshirtcdq = document.getElementById("tshirtcdq");
+    localStorage.setItem('tshirtcdq' , tshirtcdq.value);
+    location.reload();
+
+  }
+  function price() {
+    var carttshirts = localStorage.getItem('tshirts');
+    var carttshirtq = localStorage.getItem('tshirtq');
+    var cartcdq = localStorage.getItem('cdq');
+    var carttshirtcds = localStorage.getItem('tshirtcds');
+    var carttshirtcdq = localStorage.getItem('tshirtcdq');
+
+    var tshirtprice;
+    if (carttshirtq == 1) {
+      tshirtprice = 20;
+    }
+    else if (carttshirtq == 2) {
+      tshirtprice = 40;
+    }
+    else if (carttshirtq == 3) {
+      tshirtprice = 60;
+    }
+    else {
+      tshirtprice = 0;
+    }
+
+    var cdprice;
+    if (cartcdq == 1) {
+      cdprice = 10;
+    }
+    else if (cartcdq == 2) {
+      cdprice = 20;
+    }
+    else if (cartcdq == 3) {
+      cdprice = 30;
+    }
+    else {
+      cdprice = 0;
+    }
+
+    var tshirtcdprice;
+    if (carttshirtcdq == 1) {
+      tshirtcdprice = 25;
+    }
+    else if (carttshirtcdq == 2) {
+      tshirtcdprice = 50;
+    }
+    else if (carttshirtcdq == 3) {
+      tshirtcdprice = 75;
+    }
+    else {
+      tshirtcdprice = 0;
+    }
+
+    var totalprice;
+    totalprice = tshirtprice + cdprice + tshirtcdprice;
+    document.getElementById("price").innerHTML = totalprice;
+    }
+
+
+
+  function cart() {
+    var carttshirts = localStorage.getItem('tshirts');
+    var carttshirtq = localStorage.getItem('tshirtq');
+    var cartcdq = localStorage.getItem('cdq');
+    var carttshirtcds = localStorage.getItem('tshirtcds');
+    var carttshirtcdq = localStorage.getItem('tshirtcdq');
+
+    document.getElementById("chtshirts").value = carttshirts;
+    document.getElementById("chtshirtq").value = carttshirtq;
+    document.getElementById("chcdq").value = cartcdq;
+    document.getElementById("chtshirtcds").value = carttshirtcds;
+    document.getElementById("chtshirtcdq").value = carttshirtcdq;
+    if (carttshirts > 0 || carttshirtq > 0 || cartcdq > 0 || carttshirtcdq > 0 || carttshirtcds > 0)
+    {
+      document.getElementById('noitems').style.display = "none";
+    if (carttshirtq == 1 || carttshirtq == 2 || carttshirtq == 3)
+      {
+        document.getElementById('tshirtinfo').style.display = "block";
+        document.getElementById("tshirts").value = localStorage.getItem('tshirts');
+        document.getElementById("tshirtq").value = localStorage.getItem('tshirtq');
+      }
+    else
+      {
+        document.getElementById('tshirtinfo').style.display = "none";
+      }
+    if (cartcdq == 1 || cartcdq == 2 || cartcdq == 3)
+      {
+        document.getElementById('cdinfo').style.display = "block";
+        document.getElementById("cdq").value = localStorage.getItem('cdq');
+      }
+    else
+      {
+        document.getElementById('cdinfo').style.display = "none";
+      }
+    if (carttshirtcdq == 1 || carttshirtcdq == 2 || carttshirtcdq == 3)
+      {
+        document.getElementById('tshirtcdinfo').style.display = "block";
+        document.getElementById("tshirtcdq").value = localStorage.getItem('tshirtcdq');
+        document.getElementById("tshirtcds").value = localStorage.getItem('tshirtcds');
+      }
+    else
+      {
+        document.getElementById('tshirtcdinfo').style.display = "none";
+      }
+  }
+  else {
+    document.getElementById("noitems").style.display = "block"
+  }
+
+}
+  function pageload() {
+    setTimeout(finish, 500);
+    setTimeout(cart, 100);
+    setTimeout(price, 100);
+
+  }
+  function finish() {
+    document.getElementById("pageload").style.display = "none";
+    document.getElementById("everything").style.display = "block";
+    document.getElementById("everything1").style.display = "block";
+
+  }
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!Doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css?family=Cinzel" rel="stylesheet">
+<link rel="stylesheet" href="css/CSS.css">
+<script src="js/Java.js"></script>
+<title> Disturbed </title>
+<link rel="icon" href="images/icon.jpg">
+</head>
+<body>
+  <ul class="Top">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="merch.html">Merch</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="report.html">Report</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="cart.html">Cart</a></li>
+  </ul>
+  <header id="phonebar" class="menu">
+    <a href="javascript:void(0)" class="closephonemenu" onclick="closephonebar();scrolldownon()">&times;</a>
+    <div class="phonemenu">
+      <a href="index.html">Home</a>
+      <a href="merch.html">Merch</a>
+      <a href="about.html">About</a>
+      <a href="report.html">Report</a>
+      <a href="contact.html">Contact</a>
+      <a href="cart.html">Cart</a>
+    </div>
+  </header>
+  <span class="menubutton" style="font-size:30px;cursor:pointer;margin-left:48%" onclick="openphonebar()">&#9776;</span>
+
+<div class="background-image fade-in"></div>
+
+<section class="contactform">
+  <form action="mailto:czar.jacobs@gmail.com" enctype="text/plain" method="post">
+    <div class="namefield">
+      <label>First Name</label>
+      <input type="text" id="fname" name="First name" placeholder="First name" required>
+	  </div>
+    <div class="namefield">
+      <label>Last Name</label>
+      <input type="text" id="lname" name="Last name" placeholder="Last name" required>
+    </div>
+     <label for="email" style="display:block;">Email</label>
+     <input type="text" id="email" name="Email" placeholder="Email" required>
+
+     <label for="title">Title</label>
+     <input type="text" id="title" name="Title" placeholder="Subject">
+
+     <label for="message">Message</label>
+     <textarea id="message" name="Message" placeholder="Write your message here" style="height:200px" required></textarea>
+
+     <input type="submit" value="Submit">
+  </form>
+</section>
+</body>
+</html>

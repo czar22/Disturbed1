@@ -1,0 +1,237 @@
+<!Doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" content="Firefox">
+<link href="https://fonts.googleapis.com/css?family=Cinzel" rel="stylesheet">
+<link rel="stylesheet" href="css/CSS.css">
+<title> Disturbed </title>
+<script src="js/Java.js"></script>
+<link rel="icon" href="images/icon.jpg">
+</head>
+<body>
+  <ul class="Top">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="merch.html">Merch</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="report.html">Report</a></li>
+    <li><a href="contact.html">Contact</a></li>
+    <li><a href="cart.html">Cart</a></li>
+  </ul>
+  <header id="phonebar" class="menu">
+    <a href="javascript:void(0)" class="closephonemenu" onclick="closephonebar();scrolldownon()">&times;</a>
+    <div class="phonemenu">
+      <a href="index.html">Home</a>
+      <a href="merch.html">Merch</a>
+      <a href="about.html">About</a>
+      <a href="report.html">Report</a>
+      <a href="contact.html">Contact</a>
+      <a href="cart.html">Cart</a>
+    </div>
+  </header>
+  <span class="menubutton" style="font-size:30px;cursor:pointer;margin-left:48%" onclick="openphonebar();scrolldownoff();">&#9776;</span>
+<section id="scrolldownanimation" class="scrolldown">
+  <h1><span></span><span></span><span></span></h1>
+</section>
+<script>
+function scrolldownon() {
+  document.getElementById("scrolldownanimation").style.display = "block";
+}
+function scrolldownoff() {
+  document.getElementById("scrolldownanimation").style.display = "none";
+}
+function backtoshopping() {
+  setTimeout(function () {
+      location.reload();
+
+  }, 500);
+}
+
+function save(){
+  var tshirts = document.getElementById("tshirts");
+  localStorage.setItem('tshirts' , tshirts.value);
+  var tshirtq = document.getElementById("tshirtq");
+  localStorage.setItem('tshirtq' , tshirtq.value);
+  var cdq = document.getElementById("cdq");
+  localStorage.setItem('cdq' , cdq.value);
+  var tshirtcds = document.getElementById("tshirtcds");
+  localStorage.setItem('tshirtcds' , tshirtcds.value);
+  var tshirtcdq = document.getElementById("tshirtcdq");
+  localStorage.setItem('tshirtcdq' , tshirtcdq.value);
+
+  setTimeout(function () {
+    document.getElementById("added").style.display = "inline-block";
+  }, 500);
+
+}
+window.onload = load;
+
+function openphonebar1() {
+    document.getElementById("myInfo1").style.height = "100%";
+    window.onscroll = function scroll () {window.scrollTo(0, 0);};
+}
+function openphonebar2() {
+    document.getElementById("myInfo2").style.height = "100%";
+    window.onscroll = function scroll () {window.scrollTo(0, 0);};
+}
+function openphonebar3() {
+    document.getElementById("myInfo3").style.height = "100%";
+    window.onscroll = function scroll () {window.scrollTo(0, 0);};
+}
+
+function closeinfobar() {
+    document.getElementById("myInfo1").style.height = "0%";
+    document.getElementById("myInfo2").style.height = "0%";
+    document.getElementById("myInfo3").style.height = "0%";
+    setTimeout(function () {
+        location.reload();
+
+    }, 500);
+}
+
+
+</script>
+
+<div class="antibackground firstbackground fade-in">
+  <h2>STORE</h2>
+</div>
+
+
+<div class="merch">
+  <div style="display:inline-block;">
+<img class="merchimg" onclick="openphonebar1();window.scrollTo(0, 0);load();" src="images/tshirt.jpg" alt="merch_photo">
+<div class="merchtext">
+<h4> Unisex T-Shirt | £15.00 </h4>
+</div>
+</div>
+<div style="display:inline-block;">
+<img class="merchimg" onclick="openphonebar2();window.scrollTo(0, 0);load();" src="images/hat.jpg" alt="merch_photo">
+<div class="merchtext">
+<h4> hoodie | £10.00 </h4>
+</div>
+</div>
+<div style="display:inline-block;">
+<img class="merchimg" onclick="openphonebar3();window.scrollTo(0, 0);load();" src="images/hoodie.jpg" alt="merch_photo">
+<div class="merchtext">
+<h4> hat | £25.00 </h4>
+</div>
+</div>
+</div>
+
+
+
+<div id="myInfo1" class="infobackground">
+<a href="javascript:void(0)" class="closephonemenu" onclick="closeinfobar();" >&times;</a>
+<div id="tshirtcolor" style="display:none;" class="colors"><h3 id="tsfontcolor" class="colortext"> Color</h3>
+
+</div>
+<div class="itemBackground">
+<div class="topInfo">
+  <div class="topleftInfo" style="z-index:99 !important;">
+    <img id="tshirt" src="images/tshirt.jpg" alt="merch_photo">
+    <img id="hat" style="width:65%; height: 36em !important; z-index:99 !important; display:none" src="images/hat.jpg" alt="merch_photo">
+    <img id="hoodie" style="width:90%; z-index:99 !important; display:none" src="images/hoodie.jpg" alt="merch_photo">
+  </div>
+  <div class="toprightInfo">
+    <p> Tshirt <br>  <br>  Available in Small, Medium and Large <br> </p><h3 style="margin-bottom:0; margin-top:0;">£20.00</h3>
+    <h1 style="display:inline-block; vertical-align:bottom;">Quantity</h1>
+    <select id="tshirtq" style="border:2px; border-style:solid; border-color:black; margin:2px; padding:2em;background:#ffffff;font-weight:bold;">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+    </select>
+    <h1 style="display:inline-block; vertical-align:bottom;text-align:left;">Sizes</h1>
+    <select id="tshirts" style="border:2px; border-style:solid; border-color:black; margin:2px; padding:2em;background:#ffffff;font-weight:bold;">
+      <option value="s">S</option>
+      <option value="m">M</option>
+      <option value="l">L</option>
+    </select>
+
+    <button onclick="save()" class="addtocart"> Add To Cart </button>
+  </div>
+</div>
+</div>
+
+</div>
+
+<div id="myInfo2" class="infobackground">
+<a href="javascript:void(0)" class="closephonemenu" onclick="closeinfobar();">&times;</a>
+<div class="itemBackground">
+<div class="topInfo">
+  <div class="topleftInfo">
+    <img class="hatpicture" src="images/hat.jpg" alt="merch_photo">
+  </div>
+  <div class="toprightInfo">
+    <p> Hat <br> One size fits all <br>  </p><h3 style="margin-bottom:0; margin-top:0;">£10.00</h3>
+    <h1 style="display:inline-block; vertical-align:bottom;">Quantity</h1>
+    <select id="cdq" style="border:2px; border-style:solid; border-color:#black; margin:2px; padding:2em;background:#ffffff;font-weight:bold;">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+    </select>
+
+    <button onclick="save()" class="addtocart"> Add To Cart </button>
+  </div>
+</div>
+</div>
+
+</div>
+
+
+<div id="myInfo3" class="infobackground">
+<a href="javascript:void(0)" class="closephonemenu" onclick="closeinfobar();">&times;</a>
+<div id="tshirtcdcolor" style="display:none;" class="colors"><h3 id="tscdfontcolor" class="colortext"> Color</h3>
+
+</div>
+<div class="itemBackground">
+<div class="topInfo">
+  <div class="topleftInfo">
+    <img id="tshirt" style="width:90%; z-index:99 !important; display:block" src="images/hoodie.jpg" alt="merch_photo">
+    <img id="hoodie" style="width:90%; z-index:99 !important; display:none" src="images/hoodie.jpg" alt="merch_photo">
+    <img id="hat" style="width:90%; z-index:99 !important; display:none" src="images/hoodie.jpg" alt="merch_photo">
+  </div>
+  <div class="toprightInfo">
+    <p> Hoodie <br>  Available in Small, Medium and Large <br> </p><h3 style="margin-bottom:0; margin-top:0;">£25.00</h3>
+    <h1 style="display:inline-block; vertical-align:bottom;">Quantity</h1>
+    <select id="tshirtcdq" style="border:2px; border-style:solid; border-color:black; margin:2px; padding:2em;background:#ffffff;font-weight:bold;">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+    </select>
+    <h1 style="display:inline-block; vertical-align:bottom;text-align:left;">Sizes</h1>
+    <select id="tshirtcds" style="border:2px; border-style:solid; border-color:; margin:2px; padding:2em;background:#ffffff;font-weight:bold;">
+      <option value="s">S</option>
+      <option value="m">M</option>
+      <option value="l">L</option>
+    </select>
+
+
+    <button onclick="save()" class="addtocart"> Add To Cart </button>
+  </div>
+</div>
+</div>
+
+
+
+
+
+
+</div>
+<div id="added" class="added">
+  <div class="addedtocart">
+    <div class="addedtocarttext">
+      Added To Cart
+    </div>
+    <div onclick="backtoshopping()" id="goback" class="addedback">
+      Keep Shopping
+    </div>
+    <div class="addedcart">
+      <a href="cart.html"> Go To Cart </a>
+    </div>
+  </div>
+</div>
+
+
+</body>
+
+</html>
